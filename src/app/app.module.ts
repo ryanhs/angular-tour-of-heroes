@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 import { HeroService } from './hero.service';
 
@@ -23,12 +24,7 @@ import { NotfoundComponent } from './error/notfound/notfound.component';
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'heroes', component: HeroesComponent },
-      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-      { path: '**', component: NotfoundComponent }
-    ])
+    AppRoutingModule
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]
